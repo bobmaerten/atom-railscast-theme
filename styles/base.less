@@ -27,6 +27,25 @@ atom-text-editor, :host {
   }
 }
 
+atom-text-editor::shadow .highlight {
+  &.find-result .region,
+  &.current-result .region,
+  &.current-result ~ .highlight.selection .region {
+    z-index: -1;
+  }
+
+  &.find-result .region {
+    background-color: @syntax-selection-color;
+  }
+
+  &.current-result .region,
+  &.current-result ~ .highlight.selection .region {
+    background-color: @search;
+    color: @search-text;
+  }
+}
+
+
 .comment {
   font-style: italic;
   color: @gold;
@@ -75,7 +94,8 @@ atom-text-editor, :host {
   color: @light-red;
 }
 
-.support.type {
+.support.type,
+.support.class {
   color: @light-blue;
 }
 
@@ -86,7 +106,8 @@ atom-text-editor, :host {
 .meta.tag,
 .declaration.tag,
 .entity.name.tag,
-.entity.other.attribute-name {
+.entity.other.attribute-name,
+.entity.name.class {
   color: @off-yellow;
 }
 
