@@ -41,7 +41,7 @@ atom-text-editor::shadow .highlight {
   &.current-result .region,
   &.current-result ~ .highlight.selection .region {
     background-color: @search;
-    color: @search-text;
+    border: 1px solid darken(@search, 10%);
   }
 }
 
